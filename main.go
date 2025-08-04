@@ -52,16 +52,23 @@ func main() {
 		log.Crit("Unknown network", "network", networkFlag)
 	}
 
-	if l2RpcFlag != "" {
-		if l2RpcFlag == "" {
-			log.Crit("Missing --l2-rpc flag")
-		}
+	// if l2RpcFlag != "" {
+	// 	if l2RpcFlag == "" {
+	// 		log.Crit("Missing --l2-rpc flag")
+	// 	}
 
-		n = network{
-			l2RPC: l2RpcFlag,
-		}
+	// 	n = network{
+	// 		l2RPC: l2RpcFlag,
+	// 	}
 
-		networks["mega-testnet"] = n
+	// 	networks["mega-testnet"] = n
+	// }
+
+	if l2RpcFlag == "" {
+		log.Crit("Missing --l2-rpc flag")
+	}
+	n = network{
+		l2RPC: l2RpcFlag,
 	}
 
 	if withdrawalFlag == "" {
