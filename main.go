@@ -60,6 +60,8 @@ func main() {
 		n = network{
 			l2RPC: l2RpcFlag,
 		}
+
+		networks["mega-testnet"] = n
 	}
 
 	if withdrawalFlag == "" {

@@ -30,7 +30,7 @@ func TxSlot(ctx context.Context, l2c *rpc.Client, l2TxHash common.Hash) (string,
 	if err != nil {
 		return "", err
 	}
-	// fmt.Println("withdrawal hash", withdrawalHash.Hex())
+	println("withdrawal txHash:", withdrawalHash.Hex())
 	slot := withdrawals.StorageSlotOfWithdrawalHash(withdrawalHash)
 
 	return slot.Hex(), nil
